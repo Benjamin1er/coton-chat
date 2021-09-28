@@ -5,12 +5,13 @@ import User2 from './User2'
 import './Conversation.css'
 
 const Conversation = () => {
-  const [chat1, setChat1] = useState('')
+  const [chat, setChat] = useState('')
+  const [name] = useState({ name1: 'Benjamin', name2: 'Alphonse' })
 
   return (
     <div className='conversation'>
-      <User1 setChat1={setChat1} chat1={chat1} />
-      <User2 setChat1={setChat1} chat1={chat1} />
+      <User1 setChat={setChat} chat={chat} name={name} />
+      <User2 setChat={setChat} chat={chat} name={name} />
     </div>
   )
 }

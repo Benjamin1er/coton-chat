@@ -1,11 +1,6 @@
 .user2 {
+  direction:rtl;
+
   flex: 50%;
-}
-
-.text1 {
-  color: black;
-}
-
-.text2 {
-  color: red;
+  /* border-left: 12px solid #C38D9E; */
 }

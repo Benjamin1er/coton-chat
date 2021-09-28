@@ -1,5 +1,61 @@
 .conversation {
   display: flex;
-  min-height: 100vh;
-  background-color: #85DCBA;
+  height: 100vh;
+}
+
+.user {
+  list-style-type: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+
+}
+.text {
+  list-style-type: none;
+  margin-left: 20px;
+  color: gray;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.chat {
+  height: 85%;
+  line-height: 1.6em;
+  overflow-x: hidden;
+  
+  background: linear-gradient(#85DCBA, #41B3A3);
+  scrollbar-color: #41B3A3 #85DCBA;
+  scrollbar-width: thin;
+}
+.form {
+  background-color: #41B3A3;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 15%;
+}
+
+.input {
+  align-self: center;
+  width: 90%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.input:focus {
+  outline: none;
+}
+
+ul {
+  padding: 0 20px;
+}
+
+ul:hover {
+  background-color: #41B3A3;
+}
+
+.scroller {
+  scrollbar-color: black;
 }
