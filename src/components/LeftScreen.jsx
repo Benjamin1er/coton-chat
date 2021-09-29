@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 
-import './User2.css'
+import './RightScreen.css'
 
-const User2 = props => {
+const RightScreen = props => {
   const [message, setMessage] = useState('')
 
   const handleSubmit = e => {
@@ -42,7 +42,7 @@ const User2 = props => {
                 style={{
                   borderRadius:
                     userText[0] !== props.name.name1
-                      ? '30px 30px 30px 0'
+                      ? '40px 40px 40px 0'
                       : '40px 40px 0 40px',
                   marginLeft: userText[0] == props.name.name1 ? '120px' : null
                 }}
@@ -69,4 +69,4 @@ const User2 = props => {
   )
 }
 
-export default User2
+export default RightScreen

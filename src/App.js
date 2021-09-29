@@ -1,11 +1,11 @@
-import Conversation from './components/Conversation'
+import GlobalPage from './components/GlobalPage'
 
 import './App.css'
 
 function App() {
   return (
     <div className='app'>
-      <Conversation />
+      <GlobalPage />
     </div>
   )
 }

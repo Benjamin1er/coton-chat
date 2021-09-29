@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 
-import './User1.css'
+import './LeftScreen.css'
 
-const User1 = props => {
+const LeftScreen = props => {
+  //State Declaration for user input
   const [message, setMessage] = useState('')
 
+  //Functions to put users input into states
   const handleSubmit = e => {
     e.preventDefault()
     props.setChat(container => [
@@ -17,16 +19,17 @@ const User1 = props => {
     setMessage(e.target.value)
   }
 
+  //Function to clear the chat for both users (delete both chat states and localstorage)
   const clearStorage = () => {
     localStorage.removeItem('conversation')
     props.setChat('')
   }
 
+  //Function to keep the scrollbar at downest possible point
   const messagesEndRef = useRef(null)
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
-
   useEffect(() => {
     scrollToBottom()
   }, [message])
@@ -45,12 +48,10 @@ const User1 = props => {
                 className='textBlock'
                 ref={messagesEndRef}
                 style={{
-                  // textAlign:
-                  //   userText[0] !== props.name.name1 ? 'right' : 'left',
                   borderRadius:
                     userText[0] !== props.name.name1
                       ? '40px 40px 0 40px'
-                      : '30px 30px 30px 0',
+                      : '40px 40px 40px 0',
                   marginLeft: userText[0] == props.name.name2 ? '120px' : null
                 }}
                 key={index}
@@ -83,4 +84,4 @@ const User1 = props => {
   )
 }
 
-export default User1
+export default LeftScreen
