@@ -26,7 +26,7 @@ const Form = props => {
         <input
           className='input'
           placeholder={[
-            `Say Hello to ${props.left ? props.name.name1 : props.name.name2} `
+            `Say Hello to ${props.left ? props.name.name2 : props.name.name1} `
           ]}
           type='text'
           name='message'

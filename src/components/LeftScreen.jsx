@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-import Form from './Form'
+import Header from './Header'
 import Chat from './Chat'
+import Form from './Form'
 
 const LeftScreen = props => {
   //State Declaration for user input
@@ -20,9 +21,7 @@ const LeftScreen = props => {
 
   return (
     <div className='screen'>
-      <div className='header'>
-        <p>{props.name.name2}</p>
-      </div>
+      <Header {...props} />
       <Chat {...props} />
       <Form {...props} />
     </div>

@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   height: 15%;
-  border-top: 3px solid #F3F1F5;
+  border-top: 5px solid #F3F1F5;
 }
 
 .input {
@@ -33,4 +33,10 @@
   color: gray;
   font-weight: bold;
   font-size: 0.8em;
+}
+
+.modal {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
 }

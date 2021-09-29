@@ -11,7 +11,11 @@ const GlobalPage = () => {
     const initialValue = JSON.parse(saved)
     return initialValue || ''
   })
-  const [name, setName] = useState({ name1: 'Benjamin', name2: 'Alphonse' })
+  const [name, setName] = useState(() => {
+    const saved = localStorage.getItem('name')
+    const initialValue = JSON.parse(saved)
+    return initialValue || { name1: 'Benjamin', name2: 'Alphonse' }
+  })
 
   //Set props in a variable
   const props = {

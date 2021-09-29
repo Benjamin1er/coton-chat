@@ -10,7 +10,7 @@ const Chat = props => {
   }
   useEffect(() => {
     scrollToBottom()
-  }, [props.message])
+  }, [props.chat])
 
   return (
     <div className='chat'>
