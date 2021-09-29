@@ -28,14 +28,23 @@ const User2 = props => {
 
   return (
     <div className='user2'>
+      <div className='header'>
+        <p>{props.name.name1}</p>
+      </div>
       <div className='chat'>
+        {!props.chat && <p className='text'>Send a message to your friend</p>}
         {props.chat &&
           props.chat.map(obj =>
             Object.entries(obj).map((userText, index) => (
               <ul
+                className='textBlock'
                 ref={messagesEndRef}
                 style={{
-                  textAlign: userText[0] !== props.name.name2 ? 'right' : 'left'
+                  borderRadius:
+                    userText[0] !== props.name.name1
+                      ? '30px 30px 30px 0'
+                      : '40px 40px 0 40px',
+                  marginLeft: userText[0] == props.name.name1 ? '120px' : null
                 }}
                 key={index}
               >
@@ -46,11 +55,7 @@ const User2 = props => {
           )}
       </div>
 
-      <form
-        style={{ direction: 'ltr' }}
-        className='form'
-        onSubmit={handleSubmit}
-      >
+      <form className='form' onSubmit={handleSubmit}>
         <input
           className='input'
           placeholder={[`Say Hello to ${props.name.name1} `]}

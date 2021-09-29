@@ -17,6 +17,11 @@ const User1 = props => {
     setMessage(e.target.value)
   }
 
+  const clearStorage = () => {
+    localStorage.removeItem('conversation')
+    props.setChat('')
+  }
+
   const messagesEndRef = useRef(null)
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -28,14 +33,25 @@ const User1 = props => {
 
   return (
     <div className='user1'>
+      <div className='header'>
+        <p>{props.name.name2}</p>
+      </div>
       <div className='chat'>
+        {!props.chat && <p className='text'>Send a message to your friend</p>}
         {props.chat &&
           props.chat.map(obj =>
             Object.entries(obj).map((userText, index) => (
               <ul
+                className='textBlock'
                 ref={messagesEndRef}
                 style={{
-                  textAlign: userText[0] !== props.name.name1 ? 'right' : 'left'
+                  // textAlign:
+                  //   userText[0] !== props.name.name1 ? 'right' : 'left',
+                  borderRadius:
+                    userText[0] !== props.name.name1
+                      ? '40px 40px 0 40px'
+                      : '30px 30px 30px 0',
+                  marginLeft: userText[0] == props.name.name2 ? '120px' : null
                 }}
                 key={index}
               >
@@ -45,17 +61,24 @@ const User1 = props => {
             ))
           )}
       </div>
-
-      <form className='form' onSubmit={handleSubmit}>
-        <input
-          className='input'
-          placeholder={[`Say Hello to ${props.name.name2} `]}
-          type='text'
-          name='message'
-          value={message}
-          onChange={handleChange}
-        ></input>
-      </form>
+      <div className='form'>
+        <form onSubmit={handleSubmit}>
+          <input
+            className='input'
+            placeholder={[`Say Hello to ${props.name.name2} `]}
+            type='text'
+            name='message'
+            value={message}
+            onChange={handleChange}
+          ></input>
+        </form>
+        <div className='buttons'>
+          <button className='button'>Change nickname</button>
+          <button className='button' onClick={clearStorage}>
+            Clear chat
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

@@ -1,39 +1,50 @@
 .conversation {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 100vh;
+  background-color: black;
 }
 
 .user {
   list-style-type: none;
-  color: white;
   font-size: 1.2em;
   font-weight: bold;
-
+  margin-left: 7px; 
 }
+
 .text {
   list-style-type: none;
-  margin-left: 20px;
+  margin-left: 11px;
   color: gray;
   font-size: 1.2em;
   font-weight: bold;
   font-style: italic;
 }
 
+.header {
+  height: 15%;
+  background:
+    linear-gradient(to right, rgba(252, 87, 94, 1), rgba(247, 180, 44, 1));
+  border-radius: 30px 30px 0 0;
+  color: white;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+}
+
 .chat {
-  height: 85%;
+  height: 70%;
   line-height: 1.6em;
   overflow-x: hidden;
-  
-  background: linear-gradient(#85DCBA, #41B3A3);
-  scrollbar-color: #41B3A3 #85DCBA;
+  scrollbar-color: #b1dae7 white;
   scrollbar-width: thin;
 }
 .form {
-  background-color: #41B3A3;
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  justify-content: space-between;
   height: 15%;
+  border-top: 3px solid #F3F1F5;
 }
 
 .input {
@@ -42,20 +53,39 @@
   height: 100%;
   border: none;
   background-color: transparent;
+  padding-left: 10px;
 }
 
 .input:focus {
   outline: none;
 }
 
-ul {
-  padding: 0 20px;
-}
-
 ul:hover {
   background-color: #41B3A3;
 }
 
-.scroller {
-  scrollbar-color: black;
+ul {
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.textBlock {
+  margin: 20px;
+  background-color: #b1dae7;
 }

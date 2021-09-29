@@ -2,7 +2,7 @@
     // does not render single space between words
     "editor.renderWhitespace": "boundary",
     // vertical rule after 80 charachter
-    "editor.rulers": [80],
+    // "editor.rulers": [80],
     // turns off validations that VSCode
     "javascript.validate.enable": false,
     // tab = 2 spaces
