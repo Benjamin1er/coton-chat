@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import RightScreen from './RightScreen'
 import LeftScreen from './LeftScreen'
+import RightScreen from './RightScreen'
 
 import './GlobalPage.css'
 
@@ -27,7 +27,7 @@ const GlobalPage = () => {
   }, [chat])
 
   return (
-    <div className='conversation'>
+    <div className='global-page'>
       <LeftScreen {...props} />
       <RightScreen {...props} />
     </div>

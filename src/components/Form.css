@@ -1,0 +1,36 @@
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+  border-top: 3px solid #F3F1F5;
+}
+
+.input {
+  align-self: center;
+  width: 90%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  padding-left: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  color: gray;
+  font-weight: bold;
+  font-size: 0.8em;
+}

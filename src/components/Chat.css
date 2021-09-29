@@ -1,0 +1,34 @@
+
+.chat-username {
+  list-style-type: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 7px; 
+}
+
+.chat {
+  height: 70%;
+  line-height: 1.6em;
+  overflow-x: hidden;
+  scrollbar-color: #b1dae7 white;
+  scrollbar-width: thin;
+}
+
+.chat-text {
+  list-style-type: none;
+  margin-left: 11px;
+  color: gray;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.chat-text-block:hover {
+  background-color: #41B3A3;
+}
+
+.chat-text-block {
+  margin: 20px;
+  padding: 10px 15px;
+  background-color: #b1dae7;
+}
