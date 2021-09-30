@@ -1,7 +1,7 @@
-import './Header.css'
-import Dots from '../assets/dots.png'
 import M from '../assets/M2.jpg'
 import Logo from '../assets/logo2.png'
+
+import './Header.css'
 
 const Header = props => {
   return (

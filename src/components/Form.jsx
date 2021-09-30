@@ -1,6 +1,20 @@
+import { useState } from 'react'
+
+import OpenMenu from './OpenMenu'
+
+import Dots from '../assets/dots.png'
+
 import './Form.css'
 
 const Form = props => {
+  // Function and state declaration to determine wether the menu is open or not
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen)
+  }
+  const handleClose = () => setIsOpen(false)
+
   //Functions to put users input into states
   const handleSubmit = e => {
     e.preventDefault()
@@ -12,12 +26,6 @@ const Form = props => {
   }
   const handleChange = e => {
     props.setMessage(e.target.value)
-  }
-
-  //Function to clear the chat for both users (delete both chat states and localstorage)
-  const clearStorage = () => {
-    localStorage.removeItem('conversation')
-    props.setChat('')
   }
 
   return (
@@ -32,14 +40,13 @@ const Form = props => {
           name='message'
           value={props.message}
           onChange={handleChange}
+          onClick={handleClose}
         ></input>
       </form>
-      <div className='buttons'>
-        <button className='button'>Change nickname</button>
-        <button className='button' onClick={clearStorage}>
-          Clear chat
-        </button>
+      <div className='dots-container'>
+        <img className='dots' onClick={handleOpen} src={Dots} alt='dots' />
       </div>
+      {isOpen && <OpenMenu {...props} handleOpen={handleOpen} />}
     </div>
   )
 }
