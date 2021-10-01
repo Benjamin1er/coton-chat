@@ -31,6 +31,10 @@ const GlobalPage = () => {
     localStorage.setItem('conversation', JSON.stringify(chat))
   }, [chat])
 
+  useEffect(() => {
+    localStorage.setItem('username', JSON.stringify(name))
+  }, [name])
+
   return (
     <div className='global-page'>
       <LeftScreen {...props} />

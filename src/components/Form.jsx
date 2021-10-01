@@ -20,7 +20,13 @@ const Form = props => {
     e.preventDefault()
     props.setChat(container => [
       ...container,
-      { [`${props.left ? props.name.name1 : props.name.name2}`]: props.message }
+      {
+        [`${
+          props.name !== undefined && props.left
+            ? props.name.name1
+            : props.name.name2
+        }`]: props.message
+      }
     ])
     props.setMessage('')
   }
@@ -44,7 +50,13 @@ const Form = props => {
         ></input>
       </form>
       <div className='dots-container'>
-        <img className='dots' onClick={handleOpen} src={Dots} alt='dots' />
+        <img
+          style={{ transform: isOpen && 'rotate(90deg)' }}
+          className='dots'
+          onClick={handleOpen}
+          src={Dots}
+          alt='dots'
+        />
       </div>
       {isOpen && <OpenMenu {...props} handleOpen={handleOpen} />}
     </div>

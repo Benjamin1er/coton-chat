@@ -39,6 +39,7 @@
 }
 
 .dots {
+  transition: transform 0.3s ease-in-out;
   z-index: 10;
   width: 100%;
   height: 60%;
@@ -47,3 +48,4 @@
 .dots:hover {
   cursor: pointer;
 }
+
