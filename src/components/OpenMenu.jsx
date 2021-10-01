@@ -1,27 +1,36 @@
+import { useState } from 'react'
+
 import './OpenMenu.css'
 
 const OpenMenu = props => {
-  //Function to change username
+  //Function to change usernames
+  const [newNick, setNewNick] = useState('')
 
-  const modifyName1 = () => {
+  const handleChange = e => setNewNick(e.target.value)
+  console.log(newNick)
+
+  const modifyName1 = e => {
+    e.preventDefault()
     props.setPreviousName(container => {
       return { ...container, name1: [...container.name1, props.name.name1] }
     })
     props.setName(container => {
-      return { ...container, name1: Math.random().toString() }
+      return { ...container, name1: newNick }
     })
     props.handleOpen()
+    setNewNick('')
   }
+
   const modifyName2 = () => {
     props.setPreviousName(container => {
       return { ...container, name2: [...container.name2, props.name.name2] }
     })
     props.setName(container => {
-      return { ...container, name2: Math.random().toString() }
+      return { ...container, name2: newNick }
     })
     props.handleOpen()
   }
-  console.log(props.previousName)
+
   //Function to clear the chat for both users (delete both chat states and localstorage)
   const clearStorage = () => {
     localStorage.removeItem('conversation')
@@ -60,12 +69,25 @@ const OpenMenu = props => {
         <p style={{ margin: '0' }}>Settings</p>
       </div>
       <div className='open-menu-container'>
-        <button
-          className='open-menu-button nick'
-          onClick={props.left ? modifyName1 : modifyName2}
+        <p
+          style={{ margin: '0', cursor: 'default' }}
+          className='open-menu-button'
         >
-          Change Name
-        </button>
+          Change Nick
+        </p>
+        <form onSubmit={props.left ? modifyName1 : modifyName2}>
+          <input
+            minLength='4'
+            maxLength='16'
+            type='text'
+            className='open-menu-input'
+            placeholder='New Nick'
+            name='nick'
+            onChange={handleChange}
+            value={newNick}
+          />
+        </form>
+
         <button className='open-menu-button' onClick={clearStorage}>
           Clear Chat
         </button>

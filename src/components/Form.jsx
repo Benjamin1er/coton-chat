@@ -10,9 +10,7 @@ const Form = props => {
   // Function and state declaration to determine wether the menu is open or not
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleOpen = () => {
-    setIsOpen(!isOpen)
-  }
+  const handleOpen = () => setIsOpen(!isOpen)
   const handleClose = () => setIsOpen(false)
 
   //Functions to put users input into states

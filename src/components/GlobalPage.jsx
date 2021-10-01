@@ -18,7 +18,6 @@ const GlobalPage = () => {
     return initialValue || { name1: 'Benjamin', name2: 'Alphonse' }
   })
   const [previousName, setPreviousName] = useState({ name1: [], name2: [] })
-  console.log(name)
   //Set props in a variable
   const props = {
     chat: chat,
@@ -37,6 +36,7 @@ const GlobalPage = () => {
   useEffect(() => {
     localStorage.setItem('username', JSON.stringify(name))
   }, [name])
+
   return (
     <div className='global-page'>
       <LeftScreen {...props} />

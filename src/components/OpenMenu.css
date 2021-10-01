@@ -3,7 +3,7 @@
   position: absolute;
   bottom: 100%;
   right: 0;
-  height: 240%;
+  height: 250%;
   width: 50%;
   background:
   linear-gradient(to bottom, rgba(247, 180, 44, 0.8), rgba(252, 87, 94, 0.8));;
@@ -12,13 +12,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  animation-duration: 2.1s;
+  animation-name: fade;
 }
 
 .open-menu-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: auto;
+  margin: 0 0 15px 30px;
+
 }
 
 .open-menu-button {
@@ -32,9 +35,31 @@
 }
 
 .open-menu-settings {
-  padding: 10px 0;
+  cursor: default;
+  padding: 10px;
   color: #F3F1F5;
   font-size: 1.5em;
   font-weight: 600;
   border-bottom: 1px solid #F3F1F5;
+}
+
+.open-menu-input {
+  border: none;
+  background-color: #F3F1F5;
+  width: 75%;
+  margin-left: 15px;
+}
+
+.open-menu-input:focus {
+  outline: none;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

@@ -45,7 +45,6 @@ const Chat = props => {
               }}
               key={index}
             >
-              {console.log(props.previousName)}
               <li className='chat-username'>{userText[0]}</li>
               <li className='chat-text'>{userText[1]}</li>
             </ul>
