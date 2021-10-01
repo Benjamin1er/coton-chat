@@ -26,6 +26,7 @@
 }
 
 .header-username {
+  overflow: hidden;
   margin: 0;
   font-size: 0.7em;
   margin-left: 5px;

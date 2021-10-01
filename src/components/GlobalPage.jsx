@@ -13,17 +13,20 @@ const GlobalPage = () => {
     return initialValue || ''
   })
   const [name, setName] = useState(() => {
-    const saved = localStorage.getItem('name')
+    const saved = localStorage.getItem('username')
     const initialValue = JSON.parse(saved)
     return initialValue || { name1: 'Benjamin', name2: 'Alphonse' }
   })
-
+  const [previousName, setPreviousName] = useState({ name1: [], name2: [] })
+  console.log(name)
   //Set props in a variable
   const props = {
     chat: chat,
     name: name,
+    previousName: previousName,
     setChat: setChat,
-    setName: setName
+    setName: setName,
+    setPreviousName: setPreviousName
   }
 
   //useEffect to put users inputs into local storage
@@ -34,7 +37,6 @@ const GlobalPage = () => {
   useEffect(() => {
     localStorage.setItem('username', JSON.stringify(name))
   }, [name])
-
   return (
     <div className='global-page'>
       <LeftScreen {...props} />

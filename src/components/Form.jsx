@@ -21,11 +21,7 @@ const Form = props => {
     props.setChat(container => [
       ...container,
       {
-        [`${
-          props.name !== undefined && props.left
-            ? props.name.name1
-            : props.name.name2
-        }`]: props.message
+        [`${props.left ? props.name.name1 : props.name.name2}`]: props.message
       }
     ])
     props.setMessage('')

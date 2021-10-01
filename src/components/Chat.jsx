@@ -26,17 +26,26 @@ const Chat = props => {
               style={{
                 borderRadius:
                   (props.left && userText[0] == props.name.name1) ||
-                  (props.right && userText[0] == props.name.name2)
+                  (props.left &&
+                    props.previousName.name1.includes(userText[0])) ||
+                  (props.right && userText[0] == props.name.name2) ||
+                  (props.right &&
+                    props.previousName.name2.includes[userText[0]])
                     ? '40px 40px 40px 0'
                     : '40px 40px 0 40px',
                 marginLeft:
                   (props.left && userText[0] == props.name.name2) ||
-                  (props.right && userText[0] == props.name.name1)
+                  (props.left &&
+                    props.previousName.name2.includes(userText[0])) ||
+                  (props.right && userText[0] == props.name.name1) ||
+                  (props.right &&
+                    props.previousName.name1.includes(userText[0]))
                     ? '120px'
                     : null
               }}
               key={index}
             >
+              {console.log(props.previousName)}
               <li className='chat-username'>{userText[0]}</li>
               <li className='chat-text'>{userText[1]}</li>
             </ul>

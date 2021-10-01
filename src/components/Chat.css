@@ -8,6 +8,7 @@
 }
 
 .chat-username {
+  overflow: hidden;
   list-style-type: none;
   font-size: 1.2em;
   font-weight: bold;
@@ -21,6 +22,7 @@
   font-size: 1.2em;
   font-weight: bold;
   font-style: italic;
+  word-wrap: break-word;
 }
 
 .chat-text-block {
